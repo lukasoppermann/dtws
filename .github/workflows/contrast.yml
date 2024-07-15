@@ -1,0 +1,45 @@
+name: A11y contrast check
+
+on:
+  # runs on any pull request
+  pull_request:
+  # can be run manually
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Check design token color contrast
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    outputs:
+      faildChecks: ${{ steps.check-results.outputs.faildChecks }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci --no-audit --no-fund --ignore-scripts
+
+      - name: Build tokens
+        run: npm run build
+
+      - name: Run contrast checks
+        run: |
+          npm run test:contrast
+  
+  Fail_action_on_contrast_failing:
+    needs: build
+    name: Fail action on contrast failing
+    if: needs.build.outputs.faildChecks > 0
+    runs-on: ubuntu-latest
+    steps:
+      - name: Contrast checks failed
+        run: |
+          echo "::error::${{ needs.build.outputs.faildChecks }} contrast checks failed. Please fix the failing checks and try again."
+          exit 1

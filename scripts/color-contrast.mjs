@@ -5,6 +5,9 @@ const contrastRatios = {
   text : 4.5,
   border: 3
 }
+
+let hasFailed = false
+
 const colorPairs = [
   // test text color vs. background color
   ['text', 'fgColor.default', 'bgColor.default'],
@@ -56,6 +59,11 @@ const testContrast = (
     // eslint-disable-next-line no-console
     console.error(`${colorA} vs.${colorB}: ${err}`)
   }
+
+  if (contrast < minimumContrast) {
+    hasFailed = true
+  }
+
   return {
     pass: contrast >= minimumContrast ? '✅' : '❌',
     contrastRatio: `${contrast}:1`,
@@ -81,3 +89,5 @@ for (const themeName of themes) {
   console.log('| Contrast pair | Pass or fail | Actual contrast ratio  | Required contrast ratio |')
   results.map(item => console.log(`| ${Object.values(item).join(" | ")} |`) )
 }
+
+hasFailed ? process.exit(1) : process.exit(0)
