@@ -1,0 +1,20 @@
+{
+  fgColor: {
+    default: {
+      $value: '#000000'
+    },
+    link: {
+      $value: '#0000ff'
+    },
+  },
+  bgColor: {
+    default: {
+      $value: '#ffffff'
+    },
+  },
+  borderColor: {
+    contrast: {
+      $value: '#000000'
+    },
+  },
+}
