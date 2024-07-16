@@ -6,7 +6,7 @@ const contrastRatios = {
   border: 3
 }
 
-let hasFailed = false
+let failedTests = 0
 
 const colorPairs = [
   // test text color vs. background color
@@ -61,7 +61,7 @@ const testContrast = (
   }
 
   if (contrast < minimumContrast) {
-    hasFailed = true
+    failedTests++
   }
 
   return {
@@ -81,7 +81,6 @@ for (const themeName of themes) {
   const tokens = await JSON.parse(
     await readFile(`${filePath}${themeName}.json`, 'utf8'),
   )
-  console.log(tokens)
   // Run the test
   //
   const results = runContrastTest(colorPairs, tokens, contrastRatios)
@@ -91,4 +90,8 @@ for (const themeName of themes) {
   results.map(item => console.log(`| ${Object.values(item).join(" | ")} |`) )
 }
 
-hasFailed ? process.exit(1) : process.exit(0)
+if(failedTests > 0) {
+  console.error(`${failedTests} color contrasts are failing`)
+  // fail the build
+  process.exit(1) 
+}
