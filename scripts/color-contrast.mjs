@@ -25,7 +25,7 @@ const colorPairs = [
  */
 const runContrastTest = (colorPairs, tokens, contrastRatio) => {
   return colorPairs.flatMap(([contrastType, colorA, colorB]) => {
-    // concat name
+    // create contrast pair string
     const contrastPair = `${colorA} vs. ${colorB}`
     // build required string
     const contrastNumber = contrastRatios[contrastType]
@@ -36,7 +36,7 @@ const runContrastTest = (colorPairs, tokens, contrastRatio) => {
 
     return {
       contrastPair,
-      ...testContrast(contrastNumber, tokens[colorA].$value, tokens[colorB].$value),
+      ...testContrast(contrastNumber, tokens[colorA], tokens[colorB]),
       minimumContrastRatio,
     }
   })
@@ -57,7 +57,7 @@ const testContrast = (
     contrast = Math.floor(getContrast(colorA, colorB) * 100) / 100
   } catch (err) {
     // eslint-disable-next-line no-console
-    console.error(`${colorA} vs.${colorB}: ${err}`)
+    console.error(`${colorA} vs. ${colorB}: ${err}`)
   }
 
   if (contrast < minimumContrast) {
@@ -81,6 +81,7 @@ for (const themeName of themes) {
   const tokens = await JSON.parse(
     await readFile(`${filePath}${themeName}.json`, 'utf8'),
   )
+  console.log(tokens)
   // Run the test
   //
   const results = runContrastTest(colorPairs, tokens, contrastRatios)
