@@ -36,7 +36,7 @@ const runContrastTest = (colorPairs, tokens, contrastRatio) => {
 
     return {
       contrastPair,
-      ...testContrast(contrastNumber, tokens[colorA], tokens[colorB]),
+      ...testContrast(contrastNumber, tokens[colorA].$value, tokens[colorB].$value),
       minimumContrastRatio,
     }
   })
@@ -91,7 +91,7 @@ for (const themeName of themes) {
 }
 
 if(failedTests > 0) {
-  console.error(`${failedTests} color contrasts are failing`)
+  console.error(`\n\n❌ ${failedTests} color contrasts are failing`)
   // fail the build
   process.exit(1) 
 }

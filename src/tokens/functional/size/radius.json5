@@ -1,0 +1,20 @@
+{
+  radius: {
+    small: {
+      "$value": "{base.size.2}",
+      "$type": "dimension"
+    },
+    medium: {
+      "$value": "{base.size.6}",
+      "$type": "dimension"
+    },
+    large: {
+      "$value": "{base.size.12}",
+      "$type": "dimension"
+    },
+    default: {
+      "$value": "{radius.medium}",
+      "$type": "dimension"
+    }
+  }
+}

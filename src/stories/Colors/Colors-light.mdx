@@ -1,0 +1,33 @@
+import { Meta, ColorPalette, ColorItem, Title } from '@storybook/blocks';
+import {colors} from '../utils/Colors';
+import {cssVarName} from '../utils/cssVarName';
+
+export const theme = colors['light']
+
+<Meta title="Colors/Base Scale/Light" />
+ 
+# This is the title
+
+Some description
+
+<ColorPalette>
+  <ColorItem
+    title="Black and white"
+    subtitle="Some of the greys"
+    colors={{ [cssVarName(theme.white.name)]: theme.white.$value, [cssVarName(theme.black.name)]: theme.black.$value }}
+  />
+
+  ### Base scales
+  Some copy about the base scales.
+
+  <ColorItem 
+    title="Neutrals / gray" 
+    subtitle="--base-color-gray-[step]"
+    colors={ Object.fromEntries(theme.gray.map((item, index) => [index, item.$value])) } 
+  />
+  <ColorItem 
+    title="Blue" 
+    subtitle="--base-color-blue-[step]"
+    colors={ Object.fromEntries(theme.blue.map((item, index) => [index, item.$value])) } 
+  />
+</ColorPalette>

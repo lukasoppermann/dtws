@@ -1,0 +1,1 @@
+export const cssVarName = (name: string) => `--${name.replace(/\./g, '-')}`

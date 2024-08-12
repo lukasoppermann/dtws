@@ -1,13 +1,98 @@
 {
-  black: {
-    $value: '#000000'
-  },
-  white: {
-    $value: '#ffffff'
-  },
-  blue: {
-    500: {
-      $value: '#0000ff'
+  base: {
+    color: {
+      black: {
+        "$value": "#000000",
+        "$type": "color",
+      },
+      white: {
+        "$value": "#ffffff",
+        "$type": "color",
+      },
+      gray: {
+        "0": {
+          "$value": "#f6f8fa",
+          "$type": "color",
+        },
+        "100": {
+          "$value": "#eaeef2",
+          "$type": "color",
+        },
+        "200": {
+          "$value": "#d0d7de",
+          "$type": "color",
+        },
+        "300": {
+          "$value": "#afb8c1",
+          "$type": "color",
+        },
+        "400": {
+          "$value": "#8c959f",
+          "$type": "color",
+        },
+        "500": {
+          "$value": "#6e7781",
+          "$type": "color",
+        },
+        "600": {
+          "$value": "#57606a",
+          "$type": "color",
+        },
+        "700": {
+          "$value": "#424a53",
+          "$type": "color",
+        },
+        "800": {
+          "$value": "#32383f",
+          "$type": "color",
+        },
+        "900": {
+          "$value": "#24292f",
+          "$type": "color",
+        },
+      },
+      blue: {
+        "0": {
+          "$value": "#E5E5FF",
+          "$type": "color",
+        },
+        "100": {
+          "$value": "#B7B7FF",
+          "$type": "color",
+        },
+        "200": {
+          "$value": "#8A8AFF",
+          "$type": "color",
+        },
+        "300": {
+          "$value": "#5C5CFF",
+          "$type": "color",
+        },
+        "400": {
+          "$value": "#2E2EFF",
+          "$type": "color",
+        },
+        "500": {
+          "$value": "#0000ff",
+          "$type": "color",
+        },
+        "600": {
+          "$value": "#0000D6",
+          "$type": "color",
+        },
+        "700": {
+          "$value": "#0000AD",
+          "$type": "color",
+        },
+        "800": {
+          "$value": "#000085",
+          "$type": "color",
+        },
+        "900": {
+          "$value": "#00005C",
+          "$type": "color",
+        },
+      },
     },
   },
 }

@@ -1,0 +1,18 @@
+import { Meta, Markdown } from '@storybook/blocks';
+
+<Meta title="Size/Radius" />
+ 
+# Border Radius
+
+This is a manually created story. While it does not update automatically, it is extremly easy to create and very flexible.
+
+<Markdown>
+{`
+| | name | value | description |
+| --- | --- | --- | --- |
+| <div className="border-radius size-box" style="borderRadius: 2px"></div> | \`--radius-small\` | \`2px\` | Only used for small elements, like squared avatars or labels |
+| <div className="border-radius size-box" style="borderRadius: 6px"></div> | \`--radius-medium\` | \`6px\` | For UI elements like buttons or dropdowns. Prefer \`--radius-default\` |
+| <div className="border-radius size-box" style="borderRadius: 12px"></div> | \`--radius-large\` | \`12px\` | Use for large container elements, like dialogs or cards |
+| <div className="border-radius size-box" style="borderRadius: 6px"></div> | \`--radius-default\` | \`--radius-medium\` | If in doubt, use default |
+`}
+</Markdown>

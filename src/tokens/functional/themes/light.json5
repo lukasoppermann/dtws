@@ -1,23 +1,23 @@
 {
   "fgColor": {
     "default": {
-      "$value": "#000000"
+      "$value": "{base.color.black}"
     },
     "link": {
-      "$value": "#0000ff"
+      "$value": "{base.color.blue.500}"
     }
   },
   "bgColor": {
     "default": {
-      "$value": "#ffffff"
+      "$value": "{base.color.white}"
     },
     "muted": {
-      "$value": "#4c4c4c"
+      "$value": "{base.color.gray.300}"
     }
   },
   "borderColor": {
     "contrast": {
-      "$value": "#000000"
+      "$value": "{base.color.gray.700}"
     }
   }
 }

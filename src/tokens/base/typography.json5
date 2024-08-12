@@ -1,0 +1,50 @@
+{
+  typography: {
+    family: {
+      sans: {
+        "$value": 'Inter, sans-serif',
+        "$type": 'fontFamily',
+      },
+      mono: {
+        "$value": 'Menlo, monospace',
+        "$type": 'fontFamily',
+      },
+    },
+    weight: {
+      light: {
+        "$value": 300,
+        "$type": 'fontWeight',
+      },
+      regular: {
+        "$value": 400,
+        "$type": 'fontWeight',
+      },
+      bold: {
+        "$value": 700,
+        "$type": 'fontWeight',
+      },
+    },
+    size: {
+      xsmall: {
+        "$value": '12px',
+        "$type": 'dimension',
+      },
+      small: {
+        "$value": '14px',
+        "$type": 'dimension',
+      },
+      medium: {
+        "$value": '16px',
+        "$type": 'dimension',
+      },
+      large: {
+        "$value": '20px',
+        "$type": 'dimension',
+      },
+      xlarge: {
+        "$value": '24px',
+        "$type": 'dimension',
+      },
+    },
+  },
+}

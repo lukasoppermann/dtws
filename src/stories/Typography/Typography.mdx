@@ -1,0 +1,44 @@
+import { Meta, Typeset, Markdown } from '@storybook/blocks';
+ import {fontSizesArray} from '../utils/Typography';
+
+<Meta title="Typography/Typography" />
+ 
+# Typography
+ 
+## Font
+
+Some copy about the font families.
+
+<Markdown>
+{`
+| name | value | description |
+| --- | --- | --- |
+| \`--typography-family-sans\` | Inter | Default sans serif font, use for any copy. |
+| \`--typography-family-mono\` | Menlo | Mono-space, use for code preview |
+`}
+</Markdown>
+
+## Weights 
+
+Some copy about the font weights.
+
+<Markdown>
+{`
+| name | value |
+| --- | --- | --- |
+| \`--typography-weight-light\` | 300 |
+| \`--typography-weight-regular\` | 400 |
+| \`--typography-weight-bold\` | 700 |
+`}
+</Markdown>
+ 
+## Sizes
+
+Some copy about the font sizes.
+
+<Typeset
+  fontSizes={fontSizesArray}
+  fontWeight="700"
+  sampleText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  fontFamily="Inter"
+/>

@@ -4,15 +4,30 @@
   "description": "A demo repo to be used in the Design Token Workshop",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && npm run build:docs",
+    "build:basic": "npx style-dictionary clean && npx style-dictionary build",
+    "build:basicJs": "npx node ./scripts/basic.sd.mjs",
+    "clean": "rm -rf dist",
     "build:docs": "node ./scripts/buildDocs.mjs",
-    "test:contrast": "node ./scripts/color-contrast.mjs"
+    "test:contrast": "node ./scripts/color-contrast.mjs",
+    "storybook": "npm run build && storybook dev -p 6006",
+    "build:storybook": "npm run build && storybook build"
   },
   "keywords": [],
   "author": "Lukas Oppermann <oppermann.lukas@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@chromatic-com/storybook": "^1.6.1",
+    "@storybook/addon-essentials": "^8.2.4",
+    "@storybook/addon-interactions": "^8.2.4",
+    "@storybook/addon-links": "^8.2.4",
+    "@storybook/addon-onboarding": "^8.2.4",
+    "@storybook/blocks": "^8.2.4",
+    "@storybook/react": "^8.2.4",
+    "@storybook/react-vite": "^8.2.4",
+    "@storybook/test": "^8.2.4",
     "color2k": "^2.0.3",
+    "storybook": "^8.2.4",
+    "storybook-addon-theme-provider": "^0.2.2",
     "style-dictionary": "^4.0.0",
     "tsx": "^4.16.2",
     "typescript": "^5.5.3"
